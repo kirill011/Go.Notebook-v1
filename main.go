@@ -145,7 +145,7 @@ func save(startNode *node) {
 
 	for Node.nextNode != nil {
 
-		file.WriteString(fmt.Sprintf("%d %s %s %s\n", Node.number, Node.name, Node.lastname, Node.phoneNumber))
+		file.WriteString(fmt.Sprintf("%s %s %s\n", Node.name, Node.lastname, Node.phoneNumber))
 		Node = Node.nextNode
 
 	}
