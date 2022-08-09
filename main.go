@@ -261,4 +261,7 @@ func read(startNode *node) {
 		}
 
 	}
+
+	file.Close()
+
 }
