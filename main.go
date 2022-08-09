@@ -28,7 +28,6 @@ func main() {
 		case 1:
 
 			add(startNode)
-			readKey = 10
 
 		case 2:
 
@@ -38,17 +37,14 @@ func main() {
 			fmt.Fscanln(os.Stdin, &deleteNum)
 
 			startNode = delete(startNode, deleteNum)
-			readKey = 10
 
 		case 3:
 
 			save(startNode)
-			readKey = 10 //костыль, без него надпись введите имя файла появляется снова и снова
 
 		case 4:
 
 			read(startNode)
-			readKey = 10
 
 		case 5:
 
@@ -138,7 +134,7 @@ func save(startNode *node) {
 	var Node *node = startNode
 
 	fmt.Println("Введите имя файла")
-	fmt.Fscan(os.Stdin, &fileName)
+	fmt.Fscanln(os.Stdin, &fileName)
 
 	fileName += ".txt"
 	file, _ := os.Create(fileName)
@@ -219,7 +215,7 @@ func read(startNode *node) {
 	var fileName string
 
 	fmt.Println("Введите имя файла из которого считать: ")
-	fmt.Fscan(os.Stdin, &fileName)
+	fmt.Fscanln(os.Stdin, &fileName)
 
 	file, err := os.Open(fileName)
 
